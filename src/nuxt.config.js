@@ -6,7 +6,7 @@ export default {
     titleTemplate: '%s - todo_app',
     title: 'todo_app',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
