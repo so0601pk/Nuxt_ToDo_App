@@ -1,3 +1,4 @@
+// 使用しない
 export const state = () => ({
   isActive: null,
 })
