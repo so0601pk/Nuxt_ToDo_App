@@ -1,15 +1,14 @@
 export const state = () => ({
   isActive: null,
-  })
-  
-  export const mutations = {
-    setIsActive(state) {
-      this.isActive = state
-    },
-  }
-  export const getters = {
-    counter() {
-      return this.isActive
-    },
-  }
-  
+})
+
+export const mutations = {
+  setIsActive(state) {
+    this.isActive = state
+  },
+}
+export const getters = {
+  counter() {
+    return this.isActive
+  },
+}
