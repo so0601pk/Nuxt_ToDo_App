@@ -1,5 +1,5 @@
 import { getAccessorType } from 'typed-vuex'
-import * as submodule from 'store/submodule'
+import * as submodule from './submodule'
 
 export const state = () => {
   return {}
