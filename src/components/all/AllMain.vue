@@ -1,10 +1,15 @@
 <template>
   <div>
     <CommonInputText />
-    <div v-if="active || completed">
-      <!-- <div v-for="a in as">
-        <div> <input type="checkbox" name="">{{}} </div>
-      </div> -->
+    <div v-if="actives">
+      <div v-for="(active, index) in actives" :key="index">
+        <input type="checkbox" />{{ active }}
+      </div>
+    </div>
+    <div v-if="completed">
+      <div v-for="(comp, index) in completed" :key="index">
+        <input type="checkbox" />{{ comp }}
+      </div>
     </div>
   </div>
 </template>
@@ -13,7 +18,8 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      active: this.$accessor.active.getTodo,
+      actives: this.$accessor.active.getTodo,
+      completed: this.$accessor.completed.getComp,
     }
   },
 })
