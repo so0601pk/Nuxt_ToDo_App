@@ -2,7 +2,10 @@
   <div>
     <div v-if="comps">
       <div v-for="(comp, index) in comps" :key="index">
-        <input id="todo" type="checkbox" /><label for="todo">{{ comp }}</label>
+        <input id="todo" type="checkbox" checked="checked" /><label
+          for="todo"
+          >{{ comp }}</label
+        >
       </div>
     </div>
   </div>

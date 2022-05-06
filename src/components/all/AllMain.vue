@@ -3,12 +3,17 @@
     <CommonInputText />
     <div v-if="actives">
       <div v-for="(active, index) in actives" :key="index">
-        <input type="checkbox" />{{ active }}
+        <input id="active" type="checkbox" /><label for="active">{{
+          active
+        }}</label>
       </div>
     </div>
     <div v-if="completed">
       <div v-for="(comp, index) in completed" :key="index">
-        <input type="checkbox" />{{ comp }}
+        <input id="completed" type="checkbox" checked="checked" /><label
+          for="completed"
+          >{{ comp }}</label
+        >
       </div>
     </div>
   </div>
