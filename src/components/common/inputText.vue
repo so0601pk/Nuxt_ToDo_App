@@ -23,8 +23,12 @@ export default Vue.extend({
   methods: {
     addTask(): void {
       const todo: string = this.task
-      this.$accessor.active.setTodo(todo)
-      this.task = ''
+      if (todo !== '') {
+        this.$accessor.active.setTodo(todo)
+        this.task = ''
+      } else {
+        this.task = ''
+      }
     },
   },
 })

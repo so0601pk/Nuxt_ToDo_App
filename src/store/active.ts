@@ -3,7 +3,7 @@ import { getterTree, mutationTree } from 'typed-vuex'
 // actionTree
 
 export const state = () => ({
-  todo: ['hogehoge', 'hogehoge'] as string[],
+  todo: [] as string[],
 })
 export type RootState = ReturnType<typeof state>
 
@@ -14,6 +14,9 @@ export const getters = getterTree(state, {
 export const mutations = mutationTree(state, {
   setTodo(state, task): void {
     state.todo.push(task)
+  },
+  deleteTodo(state, num): void {
+    state.todo.splice(num, 1)
   },
 })
 

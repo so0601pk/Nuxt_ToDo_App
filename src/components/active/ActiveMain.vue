@@ -3,9 +3,14 @@
     <CommonInputText />
     <div v-if="todos">
       <div v-for="(todo, index) in todos" :key="index">
-        <input id="todo" type="checkbox" /><label for="todo">{{ todo }}</label>
+        <input
+          id="todo"
+          type="checkbox"
+          @change="compTask(todo, index)"
+        /><label for="todo">{{ todo }}{{ index }}</label>
       </div>
     </div>
+    {{ todos }}
   </div>
 </template>
 <script lang="ts">
@@ -15,6 +20,11 @@ export default Vue.extend({
     return {
       todos: this.$accessor.active.getTodo,
     }
+  },
+  methods: {
+    compTask(todo: string, index: number) {
+      this.$emit('complete', todo, index)
+    },
   },
 })
 </script>
