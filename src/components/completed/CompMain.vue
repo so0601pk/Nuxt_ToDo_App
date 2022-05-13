@@ -1,16 +1,17 @@
 <template>
   <div>
-    <div v-if="comps">
-      <div v-for="(comp, index) in comps" :key="index">
-        <input
-          id="todo"
-          type="checkbox"
-          checked="checked"
-          @change="activeTask(comp, index)"
-        /><label for="todo">{{ comp }}{{ index }}</label>
+    <div v-if="todoArr">
+      <div v-for="(todo, index) in todoArr" :key="index">
+        <template v-if="todo.checked == true">
+          <input
+            id="todo"
+            type="checkbox"
+            checked="checked"
+            @change="undoTask(index)"
+          /><label for="todo">{{ todo.task }}{{ index }}</label>
+        </template>
       </div>
     </div>
-    {{ comps }}
   </div>
 </template>
 <script lang="ts">
@@ -18,12 +19,13 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      comps: this.$accessor.completed.getComp,
+      todoArr: this.$accessor.todo.getTodo,
     }
   },
+  computed: {},
   methods: {
-    activeTask(comp: string, index: number) {
-      this.$emit('active', comp, index)
+    undoTask(index: number) {
+      this.$emit('changeCheck', index)
     },
   },
 })

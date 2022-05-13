@@ -3,7 +3,7 @@
     <input
       v-model="task"
       type="text"
-      maxlength="15"
+      maxlength="20"
       minlength="1"
       placeholder="add details"
     />
@@ -24,8 +24,9 @@ export default Vue.extend({
     addTask(): void {
       const todo: string = this.task
       if (todo !== '') {
-        this.$accessor.active.setTodo(todo)
+        this.$accessor.todo.setTodo(todo)
         this.task = ''
+        console.log('addTaskがtrueだよ')
       } else {
         this.task = ''
       }

@@ -3,7 +3,7 @@ import { getterTree, mutationTree } from 'typed-vuex'
 // actionTree
 
 export const state = () => ({
-  completed: [] as string[],
+  completed: ['fuga', 'fugafuga'] as string[],
 })
 export type RootState = ReturnType<typeof state>
 

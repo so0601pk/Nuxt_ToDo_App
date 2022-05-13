@@ -1,27 +1,16 @@
 <template>
   <div>
     <CommonInputText />
-    <div v-if="actives">
-      <div v-for="(todo, index) in actives" :key="index">
+    <div v-if="todos">
+      <div v-for="(todo, index) in todos" :key="index">
         <input
-          id="active"
+          :id="'todo' + index"
           type="checkbox"
-          @change="compTask(todo, index)"
-        /><label for="active">{{ todo }}{{ index }}</label>
+          :checked="todo.checked ? 'checked' : ''"
+          @change="changeCheck(index)"
+        /><label :for="'todo' + index">{{ todo.task }}</label>
       </div>
     </div>
-    <div v-if="completed">
-      <div v-for="(comp, index) in completed" :key="index">
-        <input
-          id="completed"
-          type="checkbox"
-          checked="checked"
-          @change="activeTask(comp, index)"
-        /><label for="completed">{{ comp }}{{ index }}</label>
-      </div>
-    </div>
-    {{ actives }}<br />
-    {{ completed }}
   </div>
 </template>
 <script lang="ts">
@@ -29,16 +18,20 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      actives: this.$accessor.active.getTodo,
-      completed: this.$accessor.completed.getComp,
+      todos: this.$accessor.todo.getTodo,
     }
   },
+  // watch:{
+  //   todos:{
+  //     handler(){
+
+  //     },
+  //     deep:true
+  //   },
+  // },
   methods: {
-    compTask(todo: string, index: number) {
-      this.$emit('complete', todo, index)
-    },
-    activeTask(comp: string, index: number) {
-      this.$emit('active', comp, index)
+    changeCheck(index: number) {
+      this.$emit('changeCheck', index)
     },
   },
 })

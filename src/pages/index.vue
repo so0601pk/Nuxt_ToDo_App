@@ -8,11 +8,7 @@
     </button>
     <!-- inputコンポーネント -->
     <!-- <CommonInputText v-if="currentTab !== 'Completed'" /> -->
-    <component
-      :is="currentTab"
-      @active="activeTask"
-      @complete="compTask"
-    ></component>
+    <component :is="currentTab" @changeCheck="changeCheck"></component>
   </div>
 </template>
 
@@ -41,17 +37,9 @@ export default Vue.extend({
     changeTab(value: string) {
       this.currentTab = value
     },
-    activeTask(comp: string, index: number) {
-      const activeTask = comp
-      const deleteNum = index
-      this.$accessor.active.setTodo(activeTask)
-      this.$accessor.completed.deleteTodo(deleteNum)
-    },
-    compTask(active: string, index: number) {
-      const compTask = active
-      const deleteNum = index
-      this.$accessor.completed.setTodo(compTask)
-      this.$accessor.active.deleteTodo(deleteNum)
+    changeCheck(index: number) {
+      const changeNum = index
+      this.$accessor.todo.changeState(changeNum)
     },
   },
 })

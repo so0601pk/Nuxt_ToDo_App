@@ -3,6 +3,7 @@ import { getAccessorType } from 'typed-vuex'
 // import * as submodule from './submodule'
 import * as active from './active'
 import * as completed from './completed'
+import * as todo from './todo'
 
 export const state = () => {
   return {}
@@ -18,5 +19,6 @@ export const accessorType = getAccessorType({
   modules: {
     active,
     completed,
+    todo,
   },
 })
