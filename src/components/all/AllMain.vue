@@ -21,14 +21,6 @@ export default Vue.extend({
       todos: this.$accessor.todo.getTodo,
     }
   },
-  // watch:{
-  //   todos:{
-  //     handler(){
-
-  //     },
-  //     deep:true
-  //   },
-  // },
   methods: {
     changeCheck(index: number) {
       this.$emit('changeCheck', index)
