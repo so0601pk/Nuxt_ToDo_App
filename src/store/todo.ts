@@ -1,13 +1,19 @@
 import { getterTree, mutationTree } from 'typed-vuex'
 
+// 型は大文字で記載して変数・定数と区別できるようにすることが多い
+export interface TodoType {
+  task: string
+  checked: Boolean
+}
+
 export const state = () => ({
   todo: [
     { task: 'foo', checked: true },
     { task: 'bar', checked: false },
     { task: 'yeah', checked: false },
-  ] as object[],
+  ] as TodoType[],
 })
-export type RootState = ReturnType<typeof state>
+// export type RootState = ReturnType<typeof state>
 
 export const getters = getterTree(state, {
   getTodo: (state) => state.todo,
