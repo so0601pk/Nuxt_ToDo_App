@@ -1,6 +1,8 @@
 <template>
   <div>
+    <!-- 入力フォームコンポーネント -->
     <CommonInputText />
+    <!-- 完了していないTodoを表示 -->
     <div v-if="todoArr">
       <div v-for="(todo, index) in todoArr" :key="index">
         <template v-if="todo.checked == false">

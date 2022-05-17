@@ -3,12 +3,14 @@
     <h1>#todo</h1>
     <!-- タブコンポーネント -->
     <button v-for="(tab, index) in tabs" :key="index" @click="changeTab(tab)">
-      <!--①v-on:clickで押したタブのidがdataのidに変わる-->
       <span>{{ tab }}</span>
     </button>
-    <!-- inputコンポーネント -->
-    <!-- <CommonInputText v-if="currentTab !== 'Completed'" /> -->
-    <component :is="currentTab" @changeCheck="changeCheck"></component>
+    <!-- タブを押下した際に、下記コンポーネントが切り替わる -->
+    <component
+      :is="currentTab"
+      @changeCheck="changeCheck"
+      @deleteAll="deleteAll"
+    ></component>
   </div>
 </template>
 
@@ -40,6 +42,9 @@ export default Vue.extend({
     changeCheck(index: number) {
       const changeNum = index
       this.$accessor.todo.changeState(changeNum)
+    },
+    deleteAll() {
+      this.$accessor.todo.deleteTodo()
     },
   },
 })

@@ -1,6 +1,8 @@
 <template>
   <div>
+    <!-- 入力フォームコンポーネント -->
     <CommonInputText />
+    <!-- 全てのTodoを表示 -->
     <div v-if="todos">
       <div v-for="(todo, index) in todos" :key="index">
         <input

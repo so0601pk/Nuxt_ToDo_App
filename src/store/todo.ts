@@ -21,11 +21,17 @@ export const getters = getterTree(state, {
 
 export const mutations = mutationTree(state, {
   setTodo(state, task): void {
+    // Todoの追加
     const newTask = { task: '', checked: false }
     newTask.task = task
     state.todo.push(newTask)
   },
   changeState(state, index): void {
+    // Todochekedを反転させる
     state.todo[index].checked = !state.todo[index].checked
+  },
+  deleteTodo(state): void {
+    // 配列を削除
+    state.todo.splice(0)
   },
 })
