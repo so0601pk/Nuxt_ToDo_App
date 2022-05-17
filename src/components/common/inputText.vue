@@ -26,7 +26,6 @@ export default Vue.extend({
       if (todo !== '') {
         this.$accessor.todo.setTodo(todo)
         this.task = ''
-        console.log('addTaskがtrueだよ')
       } else {
         this.task = ''
       }
