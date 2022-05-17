@@ -2,15 +2,19 @@
   <div id="contents">
     <h1>#todo</h1>
     <!-- タブコンポーネント -->
-    <button v-for="(tab, index) in tabs" :key="index" @click="changeTab(tab)">
-      <span>{{ tab }}</span>
-    </button>
-    <!-- タブを押下した際に、下記コンポーネントが切り替わる -->
-    <component
-      :is="currentTab"
-      @changeCheck="changeCheck"
-      @deleteAll="deleteAll"
-    ></component>
+    <div class="tab">
+      <button v-for="(tab, index) in tabs" :key="index" @click="changeTab(tab)">
+        <span>{{ tab }}</span>
+      </button>
+    </div>
+    <div class="todo-component">
+      <!-- タブを押下した際に、下記コンポーネントが切り替わる -->
+      <component
+        :is="currentTab"
+        @changeCheck="changeCheck"
+        @deleteAll="deleteAll"
+      ></component>
+    </div>
   </div>
 </template>
 
