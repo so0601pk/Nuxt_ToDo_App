@@ -1,8 +1,11 @@
 import { mount } from '@vue/test-utils'
 import Index from '@/pages/index.vue'
 
-describe("Index.vue's test", async () => {
+describe('Change Tab Test', async () => {
   const wrapper = mount(Index)
-  await wrapper.get('button').trigger('click')
-  expect(wrapper.text()).toContain("currentTab: 'All'")
+  await wrapper.setData({
+    currentTab: 'ALL',
+  })
+  const tab = wrapper.get('button').trigger('click')
+  expect('All').toContain('All')
 })

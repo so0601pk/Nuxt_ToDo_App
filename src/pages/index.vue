@@ -41,7 +41,9 @@ export default Vue.extend({
   },
   methods: {
     changeTab(value: string) {
-      this.currentTab = value
+      if (value === 'All' || value === 'Active' || value === 'Completed') {
+        this.currentTab = value
+      }
     },
     changeCheck(index: number) {
       const changeNum = index
