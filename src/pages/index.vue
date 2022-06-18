@@ -1,11 +1,18 @@
 <template>
   <div id="contents">
-    <h1>#todo</h1>
+    <h1 class="text-2xl font-bold text-center">#todo</h1>
     <!-- タブコンポーネント -->
-    <div class="tab">
-      <button v-for="(tab, index) in tabs" :key="index" @click="changeTab(tab)">
-        <span>{{ tab }}</span>
-      </button>
+    <div class="tab m-58 flex">
+      <div
+        v-for="(tab, index) in tabs"
+        :key="index"
+        @click="changeTab(tab)"
+        class="flex-1 text-center border-b-blue-500"
+      >
+        <button class="w-1/2 pb-2 border-b-blue-500">
+          <span>{{ tab }}</span>
+        </button>
+      </div>
     </div>
     <div class="todo-component">
       <!-- タブを押下した際に、下記コンポーネントが切り替わる -->
