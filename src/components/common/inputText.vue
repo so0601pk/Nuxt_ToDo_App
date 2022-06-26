@@ -6,7 +6,7 @@
       maxlength="20"
       minlength="1"
       placeholder="add details"
-      class="border rounded border-gray-300 w-full h-12"
+      class="border border-gray-300 w-full h-12 text-xl"
     />
     <div @click="addTask">
       <button

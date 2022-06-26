@@ -9,8 +9,13 @@
         class="flex-1 text-center"
         @click="changeTab(tab)"
       >
-        <button class="border border-b-blue-500 w-1/2 pb-2">
+        <button class="w-1/2 border-b-4 border-b-blue-500">
           <span class="text-lg">{{ tab }}</span>
+          <div
+            :class="
+              currentTab == tab ? 'w-full border-b-2 border-b-blue-500' : ''
+            "
+          ></div>
         </button>
       </div>
     </div>
