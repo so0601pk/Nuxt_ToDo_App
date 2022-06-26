@@ -6,8 +6,8 @@
       <div
         v-for="(tab, index) in tabs"
         :key="index"
-        @click="changeTab(tab)"
         class="flex-1 text-center"
+        @click="changeTab(tab)"
       >
         <button class="border border-b-blue-500 w-1/2 pb-2">
           <span class="text-lg">{{ tab }}</span>

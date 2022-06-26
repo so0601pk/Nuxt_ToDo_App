@@ -10,8 +10,8 @@
         class="leading-8 text-xl"
       >
         <input
-          class="h-4 w-4"
           :id="'todo' + index"
+          class="h-4 w-4"
           type="checkbox"
           :checked="todo.checked ? 'checked' : ''"
           @change="changeCheck(index)"
