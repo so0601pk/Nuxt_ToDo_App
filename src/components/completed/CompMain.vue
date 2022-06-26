@@ -2,10 +2,15 @@
   <div>
     <!-- 完了したTodoを表示 -->
     <div v-if="todoArr">
-      <div v-for="(todo, index) in todoArr" :key="index">
+      <div
+        v-for="(todo, index) in todoArr"
+        :key="index"
+        class="leading-8 text-xl pt-7"
+      >
         <template v-if="todo.checked == true">
           <input
             id="todo"
+            class="h-4 w-4"
             type="checkbox"
             checked="checked"
             @change="undoTask(index)"
@@ -14,7 +19,14 @@
         </template>
       </div>
       <!-- Todo: ゴミ箱の画像を表示 -->
-      <button @click="deleteAll()">delete all</button>
+      <div class="flex justify-end">
+        <button
+          class="bg-indigo-600 text-white px-10 py-1.5 rounded-lg"
+          @click="deleteAll()"
+        >
+          delete all
+        </button>
+      </div>
     </div>
   </div>
 </template>

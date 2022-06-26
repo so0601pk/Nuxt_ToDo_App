@@ -1,15 +1,17 @@
 <template>
-  <div class="flex justify-cente py-5">
+  <div class="flex justify-cente py-7">
     <input
       v-model="task"
       type="text"
       maxlength="20"
       minlength="1"
       placeholder="add details"
-      class="border border-gray-300 w-4/6"
+      class="border rounded border-gray-300 w-full h-12"
     />
     <div @click="addTask">
-      <button class="bg-indigo-600 text-white px-10 py-1.5 rounded-lg">
+      <button
+        class="bg-indigo-600 text-white px-10 py-1.5 rounded-lg h-12 ml-7"
+      >
         Add
       </button>
     </div>

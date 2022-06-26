@@ -1,5 +1,5 @@
 <template>
-  <div id="contents">
+  <div id="contents" class="px-16">
     <h1 class="text-2xl font-bold text-center">#todo</h1>
     <!-- タブコンポーネント -->
     <div class="tab m-58 flex border-b border-b-gray-200 pt-8">
