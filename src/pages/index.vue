@@ -2,15 +2,15 @@
   <div id="contents">
     <h1 class="text-2xl font-bold text-center">#todo</h1>
     <!-- タブコンポーネント -->
-    <div class="tab m-58 flex">
+    <div class="tab m-58 flex border-b border-b-gray-200 pt-8">
       <div
         v-for="(tab, index) in tabs"
         :key="index"
         @click="changeTab(tab)"
-        class="flex-1 text-center border-b-blue-500"
+        class="flex-1 text-center"
       >
-        <button class="w-1/2 pb-2 border-b-blue-500">
-          <span>{{ tab }}</span>
+        <button class="border border-b-blue-500 w-1/2 pb-2">
+          <span class="text-lg">{{ tab }}</span>
         </button>
       </div>
     </div>
