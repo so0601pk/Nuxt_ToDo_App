@@ -6,11 +6,11 @@
       maxlength="20"
       minlength="1"
       placeholder="add details"
-      class="border border-gray-300 w-full h-12 text-xl"
+      class="add_todo border border-gray-300 w-full h-12 text-xl"
     />
-    <div @click="addTask">
+    <div class="button_wrap" @click="addTask">
       <button
-        class="bg-indigo-600 text-white px-10 py-1.5 rounded-lg h-12 ml-7"
+        class="add_button bg-indigo-600 text-white px-10 py-1.5 rounded-lg h-12 ml-7"
       >
         Add
       </button>

@@ -1,17 +1,18 @@
 <template>
-  <div id="contents" class="px-16">
-    <h1 class="text-2xl font-bold text-center">#todo</h1>
+  <div id="contents" class="contents px-16">
+    <h1 class="title text-2xl font-bold text-center">#todo</h1>
     <!-- タブコンポーネント -->
-    <div class="tab m-58 flex border-b border-b-gray-200 pt-8">
+    <div class="tab_wrap m-58 flex border-b border-b-gray-200 pt-8">
       <div
         v-for="(tab, index) in tabs"
         :key="index"
-        class="flex-1 text-center"
+        class="tab_container flex-1 text-center"
         @click="changeTab(tab)"
       >
-        <button class="w-1/2 border-b-4 border-b-blue-500">
-          <span class="text-lg">{{ tab }}</span>
+        <button class="tab w-1/2 border-b-4 border-b-blue-500">
+          <span class="tab_text text-lg">{{ tab }}</span>
           <div
+            class="tab_line"
             :class="
               currentTab == tab ? 'w-full border-b-2 border-b-blue-500' : ''
             "

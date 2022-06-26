@@ -3,15 +3,15 @@
     <!-- 入力フォームコンポーネント -->
     <CommonInputText />
     <!-- 全てのTodoを表示 -->
-    <div v-if="todos">
+    <div v-if="todos" class="all_todo_wrap">
       <div
         v-for="(todo, index) in todos"
         :key="index"
-        class="leading-8 text-xl"
+        class="all_todo_container leading-8 text-xl"
       >
         <input
           :id="'todo' + index"
-          class="h-4 w-4"
+          class="todo h-4 w-4"
           type="checkbox"
           :checked="todo.checked ? 'checked' : ''"
           @change="changeCheck(index)"
